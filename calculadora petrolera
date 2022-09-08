@@ -1,0 +1,124 @@
+# Universidad Central del Ecuador
+# Nombre: Jonathan Alexis Rosero Chávez
+
+from tkinter import Tk, Label, Button, Entry
+
+ventana=Tk()
+ventana.title('Calculadora Petrolera')
+ventana.geometry('330x550')
+
+def fnCalculadora():    
+    unit=txt1.get()
+    val=txt2.get()
+    
+    unit = int(unit)
+    val = float(val)
+
+    if int(unit)==1:
+        def calculadora(val):
+            res1=float(val)*1
+            res2=float(val)*6.2898
+            res3=float(val)*35.31  
+            res4=float(val)*264   
+            res5=float(val)*1000   
+            return res1, res2, res3, res4, res5
+    elif int(unit)==2:
+        def calculadora(val):
+            res1=float(val)*0.1589
+            res2=float(val)*1
+            res3=float(val)*5.61
+            res4=float(val)*42
+            res5=float(val)*158.98
+            return res1, res2, res3, res4, res5
+    elif int(unit)==3:
+        def calculadora(val):
+            res1=float(val)*0.02831
+            res2=float(val)*0.1781
+            res3=float(val)*1
+            res4=float(val)*7.48
+            res5=float(val)*28.31
+            return res1, res2, res3, res4, res5
+    elif int(unit)==4:
+        def calculadora(val):
+            res1=float(val)*0.003785
+            res2=float(val)*0.023809
+            res3=float(val)*0.1337
+            res4=float(val)*1
+            res5=float(val)*3.7854
+            return res1, res2, res3, res4, res5
+    elif int(unit)==5:
+        def calculadora(val):
+            res1=float(val)*0.001
+            res2=float(val)*0.0062898
+            res3=float(val)*0.03531
+            res4=float(val)*0.264
+            res5=float(val)*1
+            return res1, res2, res3, res4, res5
+            
+    a,b,c,d,e = calculadora(val)
+
+    txt5.delete(0,'end')
+    txt5.insert(0,round(a,3))
+    txt6.delete(0,'end')
+    txt6.insert(0,round(b,3))
+    txt7.delete(0,'end')
+    txt7.insert(0,round(c,3))
+    txt8.delete(0,'end')
+    txt8.insert(0,round(d,3))
+    txt9.delete(0,'end')
+    txt9.insert(0,round(e,3))
+    
+etiqueta1=Label(ventana,text='Hola, esta es la calculadora petrolera', bg='orange')
+etiqueta1.place(x=10,y=10, width=300, height=30)
+
+etiqueta2=Label(ventana,text='Escoja el numero que quiere, la unidad de volumen\n que desea ingresar, según el número que corresponda:', bg='gray')
+etiqueta2.place(x=10,y=50, width=300, height=40)
+
+etiqueta3=Label(ventana,text='Menú \n* Metro cubico      [1]\n* Barril                    [2]\n* Pie cubico           [3]\n* Galón                   [4]\n* Litro                     [5]', bg='aquamarine')
+etiqueta3.place(x=30,y=100, width=140, height=100)
+txt1=Entry(ventana, bg='yellow')
+txt1.place(x=180, y=140, width=120, height=30)
+
+etiqueta4=Label(ventana,text='Ingrese el número \n del Menu', bg='blue')
+etiqueta4.place(x=180,y=100, width=120, height=30)
+
+etiqueta9=Label(ventana,text='Ingrese el valor \n a transformar', bg='skyblue')
+etiqueta9.place(x=40,y=220, width=120, height=30)
+
+txt2=Entry(ventana, bg='pink')
+txt2.place(x=180, y=220, width=120, height=30)
+
+btn1=Button(ventana,text='Calcular', command=fnCalculadora)
+btn1.place(x=100,y=260, width=120, height=30)
+
+etiqueta5=Label(ventana,text='Las unidades de volumen son:')
+etiqueta5.place(x=10,y=295, width=170, height=30)
+
+etiqueta5=Label(ventana,text='Metro Cubico', bg='green')
+etiqueta5.place(x=10,y=330, width=100, height=30)
+txt5=Entry(ventana, bg='paleturquoise')
+txt5.place(x=160, y=330, width=150, height=30)
+
+etiqueta6=Label(ventana,text='Barril', bg='green')
+etiqueta6.place(x=10,y=370, width=100, height=30)
+txt6=Entry(ventana, bg='paleturquoise')
+txt6.place(x=160, y=370, width=150, height=30)
+
+etiqueta7=Label(ventana,text='Pie Cubico', bg='green')
+etiqueta7.place(x=10,y=410, width=100, height=30)
+txt7=Entry(ventana, bg='paleturquoise')
+txt7.place(x=160, y=410, width=150, height=30)
+
+etiqueta8=Label(ventana,text='Galon', bg='green')
+etiqueta8.place(x=10,y=450, width=100, height=30)
+txt8=Entry(ventana, bg='paleturquoise')
+txt8.place(x=160, y=450, width=150, height=30)
+
+etiqueta9=Label(ventana,text='Litro', bg='green')
+etiqueta9.place(x=10,y=490, width=100, height=30)
+txt9=Entry(ventana, bg='paleturquoise')
+txt9.place(x=160, y=490, width=150, height=30)
+
+etiqueta10=Label(ventana,text="Facilidades de Producción")
+etiqueta10.place(x=80, y=520, width=150, height=30)
+ventana.mainloop()
